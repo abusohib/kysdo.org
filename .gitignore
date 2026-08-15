@@ -1,0 +1,7 @@
+.trellodata/
+node_modules/
+vendor/
+.env
+.env.*
+*.log
+.DS_Store

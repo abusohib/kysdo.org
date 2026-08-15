@@ -1,0 +1,49 @@
+/* KYSDO website — base stylesheet
+   Section layout is inline on the elements (portable into any WordPress theme/builder).
+   This file holds fonts, colour variables, hover states and responsive rules. */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --green:#1f7a43;
+  --navy:#16233d;
+  --red:#e23b2e;
+  --sand:#faf8f4;
+  --line:#e7e2d8;
+  --muted:#5b6478;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--sand);color:var(--navy);font-family:'Plus Jakarta Sans',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+p{text-wrap:pretty}
+a{color:var(--green);text-decoration:none;transition:color .15s ease,background .15s ease,border-color .15s ease}
+a:hover{color:var(--red)}
+header nav a:hover{color:var(--green)!important}
+a[style*="background:#1f7a43"]:hover{background:var(--navy)!important;color:#fff!important}
+a[style*="background:#e23b2e"]:hover{background:var(--navy)!important;color:#fff!important}
+a[style*="background:#16233d"]:hover{background:var(--green)!important;color:#fff!important}
+a[style*="border:1.5px solid #d8d2c6"]:hover{border-color:var(--green)!important;color:var(--green)!important}
+
+@media (max-width:1024px){
+  div[style*="grid-template-columns:repeat(3,1fr)"],
+  div[style*="grid-template-columns:repeat(4,1fr)"],
+  div[style*="grid-template-columns:1fr 1fr"],
+  div[style*="grid-template-columns:250px 1fr 260px"],
+  div[style*="grid-template-columns:1fr 300px"],
+  div[style*="grid-template-columns:320px 1fr"],
+  div[style*="grid-template-columns:1.05fr .95fr"],
+  div[style*="grid-template-columns:1.2fr 1fr"],
+  div[style*="grid-template-columns:280px 1fr"],
+  div[style*="grid-template-columns:1.3fr 1fr 1fr 1fr"]{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  aside{position:static!important}
+  h1{font-size:38px!important}
+}
+@media (max-width:680px){
+  div[style*="grid-template-columns"]{grid-template-columns:1fr!important}
+  nav{flex-wrap:wrap!important}
+  h1{font-size:30px!important}
+  h2{font-size:24px!important}
+  div[style*="padding:88px 32px"],div[style*="padding:64px 32px 88px"]{padding:48px 20px!important}
+  div[style*="left:-28px"]{position:static!important;margin-top:14px}
+}
