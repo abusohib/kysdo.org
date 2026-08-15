@@ -1,5 +1,7 @@
 .trellodata/
 AGENTS.md
+CLAUDE.md
+GEMINI.md
 node_modules/
 vendor/
 .env
