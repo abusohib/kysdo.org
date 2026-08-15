@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ruleset name="KYSDO Theme">
+    <description>WordPress Coding Standards for the KYSDO theme.</description>
+
+    <file>.</file>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/html/*</exclude-pattern>
+
+    <arg value="sp"/>
+    <arg name="extensions" value="php"/>
+
+    <config name="testVersion" value="8.1-"/>
+    <config name="minimum_supported_wp_version" value="6.0"/>
+
+    <rule ref="WordPress"/>
+    <rule ref="PHPCompatibilityWP"/>
+</ruleset>
