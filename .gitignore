@@ -1,4 +1,6 @@
 .trellodata/
+.trello.conf
+.claude/
 AGENTS.md
 CLAUDE.md
 GEMINI.md
