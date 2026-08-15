@@ -17,10 +17,13 @@ if ( ! file_exists( $mockup_path ) ) {
 
 $mockup = file_get_contents( $mockup_path );
 
-// Root-relative path (no scheme/host) so assets still resolve even when the
-// WordPress siteurl/home option doesn't match the domain this is served on.
-$theme_relative_path = str_replace( wp_normalize_path( untrailingslashit( ABSPATH ) ), '', wp_normalize_path( __DIR__ ) );
-$base_uri            = '/' . trailingslashit( ltrim( $theme_relative_path, '/' ) ) . 'html/';
+if ( false === $mockup ) {
+	wp_die( esc_html__( 'Mockup file html/index.html could not be read.', 'kysdo-theme' ) );
+}
+
+// Resolved via the WordPress template URI API so it stays correct across
+// symlinked installs, multisite, and non-standard siteurl configurations.
+$base_uri = trailingslashit( get_template_directory_uri() ) . 'html/';
 
 $mockup = str_replace( 'href="style.css"', 'href="' . esc_url( $base_uri . 'style.css' ) . '"', $mockup );
 $mockup = str_replace( 'src="assets/', 'src="' . esc_url( $base_uri . 'assets/' ), $mockup );
